@@ -1,0 +1,45 @@
+.Repo {
+  border-top: 1px solid #ccc;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  cursor: pointer;
+}
+
+.Repo-desc {
+  flex: 5;
+}
+
+.Repo-desc-content {
+  width: 80%;
+}
+
+.Repo-meta {
+  display: inline-flex;
+  margin-top: 1rem;
+}
+
+.Repo-meta p:not(:first-child) {
+  margin-left: 1.5rem;
+}
+
+.Repo-stats {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.Repo-stat {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.Repo-stat .icon {
+  margin-right: .25rem;
+}
+
+.Repo-stat:not(:first-child) {
+  margin-left: .75rem;
+}

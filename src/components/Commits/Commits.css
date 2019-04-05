@@ -1,0 +1,44 @@
+.Commits {
+  overflow-y: scroll;
+  flex: 1;
+}
+
+.Commit {
+  padding: 1rem;
+}
+
+.Commit:not(:first-child) {
+  border-top: 1px solid #d1d2d3;
+}
+
+.Commit-message {
+  font-weight: bold;
+  font-family: "Bold-font" sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.Commit-stats {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  margin-top: .5rem;
+}
+
+.Author-link {
+  display: flex;
+  align-items: center;
+}
+
+.Author-link span {
+  font-weight: bold;
+  margin-left: .25rem;
+}
+
+.Author-image {
+  width: 20px;
+}
+
+.Commit-time {
+  margin-left: .25rem;
+}

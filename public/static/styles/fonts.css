@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Regular-font';
+  src: url('/static/assets/fonts/NetflixSans_W_Rg.woff2') format('woff2'),
+       url('/static/assets/fonts/NetflixSans_W_Rg.woff2') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bold-font';
+  src: url('/static/assets/fonts/NetflixSans_W_Bd.woff2') format('woff2'),
+       url('/static/assets/fonts/NetflixSans_W_Bd.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

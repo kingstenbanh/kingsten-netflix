@@ -1,14 +1,57 @@
+:root {
+  --netflix-red: #e50914;
+  --netflix-dark-red: #b20710;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Regular-font', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bold-font', Arial, sans-serif;
+  font-weight: bold;
+}
+
+body.side-open {
+  overflow: hidden;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  font-size: 14px;
+}
+
+.header-two {
+  margin-bottom: .75rem;
+  font-size: 1.25rem;
+}
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.text-gray {
+  color: #586069;
+}
+
+.text-small {
+  font-size: 12px;
 }

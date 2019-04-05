@@ -1,0 +1,30 @@
+.Pagination {
+  display: inline-block;
+}
+
+.Pagination span,
+.Pagination a {
+  padding: .5rem;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+  cursor: pointer;
+}
+
+.Previous-page:hover,
+.Next-page:hover,
+.Pagination a.active {
+  background-color: var(--netflix-red);
+  color: #fff;
+}
+
+.Pagination a:hover {
+  background-color: var(--netflix-dark-red);
+  color: #fff;
+}
+
+.Previous-page.disabled,
+.Next-page.disabled {
+  cursor: not-allowed;
+  background-color: #fafbfc;
+  color: #d1d2d3;
+}
