@@ -1,3 +1,7 @@
+.Repos {
+  margin-bottom: 2rem;
+}
+
 .Repo {
   border-top: 1px solid #ccc;
   padding-top: 2rem;
@@ -42,4 +46,25 @@
 
 .Repo-stat:not(:first-child) {
   margin-left: .75rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .Repo {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    flex-direction: column;
+  }
+
+  .Repo-desc-content {
+    width: 100%;
+  }
+
+  .Repo-stats {
+    margin-top: .5rem;
+    justify-content: flex-start;
+  }
+
+  .Repo-stat {
+    font-size: 12px;
+  }
 }

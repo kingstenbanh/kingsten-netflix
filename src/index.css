@@ -2,6 +2,7 @@
   --netflix-red: #e50914;
   --netflix-dark-red: #b20710;
   --model-index: 900;
+  --side-panel-width: 520px;
 }
 
 * {
@@ -22,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Bold-font', Arial, sans-serif;
   font-weight: bold;
 }
-
+  
 body.side-open {
   overflow: hidden;
 }
@@ -56,4 +57,29 @@ p {
 
 .text-small {
   font-size: 12px;
+}
+
+@media only screen and (max-width: 500px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Regular-font', Arial, sans-serif;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .header-two {
+    font-size: 14px;
+    margin-bottom: .5rem;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .text-small {
+    font-size: 10px;
+  }
 }

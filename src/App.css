@@ -1,6 +1,3 @@
-.App {
-}
-
 .App-body {
   display: flex;
   flex-direction: column;
@@ -17,4 +14,22 @@
   padding-bottom: 1rem;
   display: flex;
   justify-content: space-between
+}
+
+@media only screen and (max-width: 500px) {
+  .App-body {
+    padding: 1rem;
+  }
+
+  .Content {
+    width: 100%;
+  }
+
+  .Content-header {
+    flex-direction: column;
+  }
+
+  .Content-header h1 {
+    margin-bottom: .5rem;
+  }
 }

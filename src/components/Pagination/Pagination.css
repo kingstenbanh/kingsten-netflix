@@ -28,3 +28,9 @@
   background-color: #fafbfc;
   color: #d1d2d3;
 }
+
+@media only screen and (max-width: 500px) {
+  .Pagination {
+    font-size: 14px;
+  }
+}

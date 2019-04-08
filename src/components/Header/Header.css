@@ -2,6 +2,7 @@
   height: 4rem;
   display: flex;
   justify-items: center;
+  align-items: center;
   padding: 1rem;
   position: sticky;
   top: 0;
@@ -21,3 +22,24 @@
   border-left: 1px solid #ccc;
   padding-left: 1rem;
 }
+
+@media only screen and (max-width: 500px) {
+  .Header {
+    height: 3rem;
+    padding: .5rem 1rem;
+  }
+
+  .Logo {
+    height: 1rem;
+  }
+
+  .Title {
+    font-size: .875rem;
+    font-weight: normal;
+    font-family: 'Regular-font', sans-serif;
+    line-height: 1.5rem;
+    margin-left: .75rem;
+    padding-left: .75rem;
+  }
+}
+
