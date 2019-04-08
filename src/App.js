@@ -52,7 +52,6 @@ const App = () => {
     setRepos(items);
     setRepoMap(newRepoMap);
     setIsLoading(false);
-
   }
 
   const getRepos = (user = 'Netflix', sort = 'forks') => {
