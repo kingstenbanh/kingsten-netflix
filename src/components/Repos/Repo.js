@@ -37,17 +37,17 @@ const Repo = ({ data, action }) => {
       
       <div className="Repo-stats">
         <span className="Repo-stat">
-          <img className="icon" src="/static/assets/fork.svg" />
+          <img className="icon" src="/static/assets/fork.svg" alt="Fork Icon" />
           { numberFormatter(data.forks_count) }
         </span>
 
         <span className="Repo-stat">
-          <img className="icon" src="/static/assets/star.svg" />
+          <img className="icon" src="/static/assets/star.svg" alt="Star Icon" />
           { numberFormatter(data.stargazers_count) }
         </span>
 
         <span className="Repo-stat">
-          <img className="icon" src="/static/assets/watch.svg" />
+          <img className="icon" src="/static/assets/watch.svg" alt="Watch Icon"/>
           { numberFormatter(data.watchers_count) }
         </span>
       </div>

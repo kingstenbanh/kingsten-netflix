@@ -8,11 +8,29 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta name="theme-color" content="#000000" />
-    <link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.min.css" />
-    <link rel="stylesheet" href="/static/styles/fonts.css">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Netflix | Project Explorer</title>
     <style>
+      /*! minireset.css v0.0.4 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,iframe,object,video{height:auto;max-width:100%}audio{max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+
+      @font-face {
+        font-family: 'Regular-font';
+        src: url('/static/assets/fonts/NetflixSans_W_Rg.woff2') format('woff2'),
+            url('/static/assets/fonts/NetflixSans_W_Rg.woff2') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Bold-font';
+        src: url('/static/assets/fonts/NetflixSans_W_Bd.woff2') format('woff2'),
+            url('/static/assets/fonts/NetflixSans_W_Bd.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
       #splash-container {
         position: fixed;
         top: 0;

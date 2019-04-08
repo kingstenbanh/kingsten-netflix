@@ -21,8 +21,13 @@ const SidePanel = ({ isOpen, close, title = '', children }) => {
         <div className="SidePanel-header">
           <h2>{ title }</h2>
 
-          <button className="SidePanel-close" onClick={close}>
-            <img src="/static/assets/x.svg" />
+          <button 
+            className="SidePanel-close" 
+            onClick={close}
+            role="button"
+            aria-label="Close Side Panel"
+          >
+            <img src="/static/assets/x.svg" alt="Close Icon" />
           </button>
         </div>
 
