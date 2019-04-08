@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Options = ({ options }) => {
+const Options = ({ options, value, onChange }) => {
+  const handleChange = (event) => {
+    onChange(event.target.value);
+  };
+
   return (
-    <select>
+    <select value={value} onChange={handleChange}>
       {
-        options.map(option => (
-          <option key={option.value}>{ option.name }</option>
+        options.map((option, index) => (
+          <option key={index} value={option.value}>{ option.name }</option>
         ))
       }
     </select>

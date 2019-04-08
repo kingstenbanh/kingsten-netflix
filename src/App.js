@@ -11,16 +11,9 @@ import {
 } from './components';
 import { initialState, reducer } from './reducer';
 import Actions from './actions';
+import { sortOptions } from './constants';
 
 import './App.css';
-
-const options = [{
-  value: 'forks',
-  name: 'Sort: Most forks',
-}, {
-  value: 'stars',
-  name: 'Sort: Most stars',
-}];
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -29,6 +22,7 @@ const App = () => {
     isLoading,
     isSidePanelOpen,
     totalRepos,
+    sortAndOrder,
     repoPage,
     repos,
     repoMap,
@@ -38,13 +32,13 @@ const App = () => {
 
   useEffect(() => {
     actions.getRepos();
-  }, [repoPage]); 
+  }, [repoPage, sortAndOrder]); 
 
   const handleGetCommits = (repoName) => {
     actions.toggleSidePanel();
     actions.getCommits(repoName);
   }
-  
+
   return (
     <div className="App">
       <Header />
@@ -58,7 +52,11 @@ const App = () => {
                     { totalRepos } repository results
                   </h1>
       
-                  <Options options={options} />
+                  <Options 
+                    value={sortAndOrder}
+                    options={sortOptions} 
+                    onChange={actions.updateSortAndOrder} 
+                  />
                 </div>
       
                 <Repos data={repos} action={handleGetCommits} />

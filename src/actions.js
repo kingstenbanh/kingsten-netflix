@@ -16,10 +16,15 @@ class Actions {
     }
   })
 
-  getRepos = async(user = 'Netflix', sort = 'forks') => {
-    const { caches, repoPage } = this.state;
+  updateSortAndOrder = (value) => this.dispatch({
+    type: 'UPDATE_SORT_AND_ORDER',
+    payload: value,
+  })
+
+  getRepos = async(user = 'Netflix') => {
+    const { caches, repoPage, sortAndOrder } = this.state;
     const baseUrl = "https://api.github.com/search/repositories";
-    const url = `${baseUrl}?q=user:${user}&sort=${sort}&page=${repoPage + 1}`;
+    const url = `${baseUrl}?q=user:${user}&page=${repoPage + 1}&${sortAndOrder}`;
     const response = caches[url];
 
     if (response) {

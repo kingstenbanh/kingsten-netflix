@@ -3,6 +3,7 @@ const initialState = {
   isSidePanelOpen: false,
   totalRepos: 0,
   repoPage: 0,
+  sortAndOrder: '',
   repos: [],
   caches: {},
   commitPage: 1,
@@ -19,19 +20,21 @@ const itemsToMap = (items) => {
 }
 
 const reducer = (state, { type, payload }) => {
+  console.log(type, payload);
+  
   switch (type) {
     case 'LOADING': {
       return {
         ...state,
         isLoading: payload,
-      }
+      };
     }
 
     case 'TOGGLE_SIDE_PANEL': {
       return {
         ...state,
         isSidePanelOpen: !state.isSidePanelOpen,
-      }
+      };
     }
 
     case 'UPDATE_CACHES': {
@@ -44,7 +47,14 @@ const reducer = (state, { type, payload }) => {
       return {
         ...state,
         caches: newCaches,
-      }
+      };
+    }
+
+    case 'UPDATE_SORT_AND_ORDER': {
+      return {
+        ...state,
+        sortAndOrder: payload, 
+      };
     }
 
     case 'UPDATE_REPOS': {
@@ -78,7 +88,7 @@ const reducer = (state, { type, payload }) => {
       return {
         ...state,
         repoPage: payload,
-      }
+      };
     }
 
     case 'UPDATE_COMMITS': {
@@ -90,7 +100,7 @@ const reducer = (state, { type, payload }) => {
           [repoName]: response,
         },
         currentRepo: repoName,
-      }
+      };
     }
 
     case 'UPDATE_COMMIT_PAGE': {
