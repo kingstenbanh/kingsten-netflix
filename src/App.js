@@ -133,8 +133,16 @@ const App = () => {
         }
       </div>
 
-      <SidePanel isOpen={openSide} repo={repoMap[currentRepo]} close={toggleSide}>
+      <SidePanel 
+        isOpen={openSide} 
+        title={repoMap[currentRepo] && repoMap[currentRepo].full_name} 
+        close={toggleSide}
+      >
         <Commits data={commits[currentRepo] || []} />
+        <div className="">
+          <button>Newer</button>
+          <button>Older</button>
+        </div>
       </SidePanel>
     </div>
   );

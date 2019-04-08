@@ -2,38 +2,34 @@ import React from 'react';
 
 import './SidePanel.css';
 
-const SidePanel = ({ isOpen, close, repo = {}, children }) => {
+const SidePanel = ({ isOpen, close, title = '', children }) => {
+  const sidePanelOverlayClass = isOpen ? 'SidePanelOverlay open' : 'SidePanelOverlay';
+  const sidePanelActive = isOpen ? 'SidePanel active' : 'SidePanel';
+  document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+
   const handleClickOutside = (event) => {
     if (event.target.classList.contains('SidePanelOverlay')) {
       close();
     }
   }
 
-  if (isOpen) {
-    document.body.classList.add('side-open');
+  return (
+    <>
+      <div className={sidePanelOverlayClass} onClick={handleClickOutside} />
 
-    return (
-      <div className="SidePanelOverlay" onClick={handleClickOutside}>
-        <div className="SidePanel">
-          <div className="SidePanel-header">
-            <button className="SidePanel-close" onClick={close}>
-              <img src="/static/assets/x.svg" />
-            </button>
-            <h2>{ repo.full_name }</h2>
-          </div>
-          { children }
-          <div className="SidePanel-footer">
-            <button>Newer</button>
-            <button>Older</button>
-          </div>
+      <div className={sidePanelActive}>
+        <div className="SidePanel-header">
+          <h2>{ title }</h2>
+
+          <button className="SidePanel-close" onClick={close}>
+            <img src="/static/assets/x.svg" />
+          </button>
         </div>
-      </div>
-    );
-  } else {
-    document.body.classList.remove('side-open');
-  }
 
-  return null;
+        { children }
+      </div>
+    </>
+  );
 }
 
 export default SidePanel;

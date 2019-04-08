@@ -21,7 +21,7 @@ const Commit = ({ data }) => {
                 <span>{ author.login }</span>
               </a>
               <span className="Commit-time">
-                commited { format(author.date) }
+                commited { format(commit.author.date) }
               </span>
             </>
           )

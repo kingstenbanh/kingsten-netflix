@@ -1,6 +1,7 @@
 :root {
   --netflix-red: #e50914;
   --netflix-dark-red: #b20710;
+  --model-index: 900;
 }
 
 * {
