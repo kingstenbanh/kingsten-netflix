@@ -30,7 +30,7 @@ const Repo = ({ data, action }) => {
             ) 
           }
           <p className="text-gray text-small">
-            Updated on { format(data.updated_at) }
+            Updated on { format(data.pushed_at) }
           </p>
         </div>
       </div>

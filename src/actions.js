@@ -1,15 +1,22 @@
+import * as constants from './constants';
+
 class Actions {
   constructor(dispatch, state) {
     this.dispatch = dispatch;
     this.state = state;
   }
 
-  toggleSidePanel = () => this.dispatch({ type: 'TOGGLE_SIDE_PANEL' })
+  toggleSidePanel = () => this.dispatch({ 
+    type: constants.TOGGLE_SIDE_PANEL,
+  })
 
-  setLoading = (isLoading) => this.dispatch({ type: 'LOADING', payload: isLoading })
+  setLoading = (isLoading) => this.dispatch({ 
+    type: constants.LOADING, 
+    payload: isLoading,
+  })
 
   updateCaches = (url, response) => this.dispatch({
-    type: 'UPDATE_CACHES',
+    type: constants.UPDATE_CACHES,
     payload: {
       url,
       response,
@@ -17,7 +24,7 @@ class Actions {
   })
 
   updateSortAndOrder = (value) => this.dispatch({
-    type: 'UPDATE_SORT_AND_ORDER',
+    type: constants.UPDATE_SORT_AND_ORDER,
     payload: value,
   })
 
@@ -42,7 +49,7 @@ class Actions {
   }
 
   updateRepos = (url, response) => this.dispatch({
-    type: 'UPDATE_REPOS',
+    type: constants.UPDATE_REPOS,
     payload: {
       url,
       response,
@@ -50,7 +57,7 @@ class Actions {
   })
 
   updateRepoPage = (repoPage) => this.dispatch({
-    type: 'UPDATE_REPO_PAGE',
+    type: constants.UPDATE_REPO_PAGE,
     payload: repoPage,
   })
 
@@ -73,7 +80,7 @@ class Actions {
 
   updateCommits = (repoName, response) => {
     this.dispatch({
-      type: 'UPDATE_COMMITS',
+      type: constants.UPDATE_COMMITS,
       payload: {
         repoName,
         response,
@@ -92,7 +99,7 @@ class Actions {
     }
 
     await this.dispatch({
-      type: 'UPDATE_COMMIT_PAGE',
+      type: constants.UPDATE_COMMIT_PAGE,
       payload: newCommitPage,
     });
     await this.getCommits(currentRepo, newCommitPage);

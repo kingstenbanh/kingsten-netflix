@@ -1,3 +1,5 @@
+import * as constants from './constants';
+
 const initialState = {
   isLoading: true,
   isSidePanelOpen: false,
@@ -20,24 +22,22 @@ const itemsToMap = (items) => {
 }
 
 const reducer = (state, { type, payload }) => {
-  console.log(type, payload);
-  
   switch (type) {
-    case 'LOADING': {
+    case constants.LOADING: {
       return {
         ...state,
         isLoading: payload,
       };
     }
 
-    case 'TOGGLE_SIDE_PANEL': {
+    case constants.TOGGLE_SIDE_PANEL: {
       return {
         ...state,
         isSidePanelOpen: !state.isSidePanelOpen,
       };
     }
 
-    case 'UPDATE_CACHES': {
+    case constants.UPDATE_CACHES: {
       const { url, response } = payload;
       const newCaches = {
         ...state.caches,
@@ -50,14 +50,14 @@ const reducer = (state, { type, payload }) => {
       };
     }
 
-    case 'UPDATE_SORT_AND_ORDER': {
+    case constants.UPDATE_SORT_AND_ORDER: {
       return {
         ...state,
         sortAndOrder: payload, 
       };
     }
 
-    case 'UPDATE_REPOS': {
+    case constants.UPDATE_REPOS: {
       const {
         url,
         response,
@@ -84,14 +84,14 @@ const reducer = (state, { type, payload }) => {
       };
     }
 
-    case 'UPDATE_REPO_PAGE': {
+    case constants.UPDATE_REPO_PAGE: {
       return {
         ...state,
         repoPage: payload,
       };
     }
 
-    case 'UPDATE_COMMITS': {
+    case constants.UPDATE_COMMITS: {
       const { repoName, response } = payload;
 
       return {
@@ -103,7 +103,7 @@ const reducer = (state, { type, payload }) => {
       };
     }
 
-    case 'UPDATE_COMMIT_PAGE': {
+    case constants.UPDATE_COMMIT_PAGE: {
       return {
         ...state,
         commitPage: payload,
