@@ -61,9 +61,10 @@ class Actions {
     payload: repoPage,
   })
 
-  getCommits = async(repoName, commitPage = 0) => {
+  getCommits = async(repoName, commitPage = 1) => {
     const { caches } = this.state;
-    const url = `https://api.github.com/repos/${repoName}/commits?page=${commitPage + 1}`;
+
+    const url = `https://api.github.com/repos/${repoName}/commits?page=${commitPage}`;
     const response = caches[url];
 
     if (response) {
@@ -95,7 +96,7 @@ class Actions {
     if (type == 'INCREASE') {
       newCommitPage += 1;
     } else {
-      newCommitPage = Math.max(newCommitPage - 1, 0);
+      newCommitPage = Math.max(newCommitPage - 1, 1);
     }
 
     await this.dispatch({
@@ -104,6 +105,10 @@ class Actions {
     });
     await this.getCommits(currentRepo, newCommitPage);
   }
+
+  resetCommitPage = () => this.dispatch({
+    type: constants.RESET_COMMIT_PAGE,
+  });
 };
 
 export default Actions;

@@ -110,6 +110,13 @@ const reducer = (state, { type, payload }) => {
       };
     }
 
+    case constants.RESET_COMMIT_PAGE: {
+      return {
+        ...state,
+        commitPage: 1,
+      }
+    }
+
     default: {
       return state;
     }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer, useContext } from 'react';
+import React, { useEffect, useReducer } from 'react';
 
 import { 
   Commits, 
@@ -14,6 +14,7 @@ import Actions from './actions';
 import { sortOptions } from './constants';
 
 import './App.css';
+import { CommitPagination } from './components/Commits';
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -27,6 +28,7 @@ const App = () => {
     repos,
     repoMap,
     currentRepo,
+    commitPage,
     commits,
   } = state;
 
@@ -35,6 +37,7 @@ const App = () => {
   }, [repoPage, sortAndOrder]); 
 
   const handleGetCommits = (repoName) => {
+    actions.resetCommitPage();
     actions.toggleSidePanel();
     actions.getCommits(repoName);
   }
@@ -78,10 +81,10 @@ const App = () => {
       >
         <Commits data={commits[currentRepo] || []} />
 
-        <div className="">
-          <button onClick={() => actions.updateCommitPage('DECREASE')}>Newer</button>
-          <button onClick={() => actions.updateCommitPage('INCREASE')}>Older</button>
-        </div>
+        <CommitPagination 
+          action={actions.updateCommitPage} 
+          commitPage={commitPage}
+        />
       </SidePanel>
     </div>
   );
